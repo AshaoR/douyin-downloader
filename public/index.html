@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>抖音视频去水印下载</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>抖音视频去水印</h1>
+      <p class="subtitle">粘贴抖音分享链接，一键下载无水印视频</p>
+    </header>
+
+    <main>
+      <div class="input-section">
+        <div class="input-wrapper">
+          <input
+            type="url"
+            id="videoUrl"
+            placeholder="粘贴抖音分享链接，如 https://v.douyin.com/xxxxx/"
+            autocomplete="off"
+          />
+          <button id="parseBtn">解析</button>
+        </div>
+        <p class="hint">支持抖音 APP 内复制的链接 / 分享口令</p>
+      </div>
+
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>正在解析视频...</p>
+      </div>
+
+      <div id="error" class="error hidden"></div>
+
+      <div id="result" class="result hidden">
+        <div class="video-preview">
+          <img id="coverImg" class="cover-img" alt="视频封面" />
+          <video id="videoPlayer" controls preload="none" style="display:none">
+            <p>你的浏览器不支持视频播放，请直接下载</p>
+          </video>
+          <div id="playOverlay" class="play-overlay hidden">
+            <svg viewBox="0 0 80 80" width="48" height="48"><circle cx="40" cy="40" r="38" fill="none" stroke="white" stroke-width="3"/><polygon points="32,24 60,40 32,56" fill="white"/></svg>
+          </div>
+        </div>
+        <div class="video-info">
+          <p id="videoDesc" class="video-desc"></p>
+          <p id="videoAuthor" class="video-author"></p>
+        </div>
+        <div class="actions">
+          <a id="downloadBtn" class="btn btn-primary" target="_blank">下载无水印视频</a>
+          <button id="copyLinkBtn" class="btn btn-secondary">复制视频链接</button>
+        </div>
+        <p id="iosHint" class="ios-hint hidden">iOS 用户请长按上方按钮 → 下载链接文件</p>
+      </div>
+    </main>
+
+    <footer>
+      <p>仅供个人学习使用，请遵守相关法律法规</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
